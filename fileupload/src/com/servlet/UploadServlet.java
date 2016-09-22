@@ -51,12 +51,11 @@ public class UploadServlet extends HttpServlet {
         String uploadFolder = getServletContext().getRealPath("")
                 + File.separator + DATA_DIRECTORY;
 
-        String agency;
-        agency = request.getParameterValues("Agency").toString();
-        if (agency != null && !agency.isEmpty())
+        //String agency = request.getParameterValues("Agency")[0];
+        if (request.getParameterValues("Agency") != null)
         {
             uploadFolder.concat(File.separator);
-            uploadFolder.concat(agency);
+            uploadFolder.concat(String.valueOf(request.getParameterValues("Agency")));
         }
 
         // Create a new file upload handler
