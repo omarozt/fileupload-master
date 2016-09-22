@@ -53,7 +53,6 @@ public class UploadServlet extends HttpServlet {
 
         String agency;
         agency = request.getParameterValues("Agency").toString();
-
         if (agency != null && !agency.isEmpty())
         {
             uploadFolder.concat(File.separator);
@@ -76,7 +75,6 @@ public class UploadServlet extends HttpServlet {
                 if (!item.isFormField()) {
                     String fileName = new File(item.getName()).getName();
                     String filePath = uploadFolder + File.separator + fileName;
-
                     File uploadedFile = new File(filePath);
                     System.out.println(filePath);
                     // saves the file to upload directory
